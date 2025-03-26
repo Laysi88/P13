@@ -1,4 +1,8 @@
-from django.shortcuts import render
+"""
+Views for the profiles application.
+"""
+
+from django.shortcuts import render, get_object_or_404
 from .models import Profile
 
 
@@ -7,6 +11,15 @@ from .models import Profile
 # pulvinar eget. Fusc faucibus, urna quis auctor pharetra, massa dolor cursus neque, quis dictum
 # lacus d
 def index(request):
+    """
+    Displays the list of all user profiles.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: The HTML response containing all profiles.
+    """
     profiles_list = Profile.objects.all()
     context = {"profiles_list": profiles_list}
     return render(request, "profiles/index.html", context)
@@ -17,6 +30,16 @@ def index(request):
 # dolor id facilisis fringilla, eros leo tristique lacus,it. Nam aliquam dignissim congue.
 # Pellentesque habitant morbi tristique senectus et netus et males
 def profile(request, username):
-    profile = Profile.objects.get(user__username=username)
+    """
+    Displays the details of a single user profile.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        username (str): The username used to retrieve the corresponding profile.
+
+    Returns:
+        HttpResponse: The HTML response with profile details.
+    """
+    profile = get_object_or_404(Profile, user__username=username)
     context = {"profile": profile}
     return render(request, "profiles/profile.html", context)
