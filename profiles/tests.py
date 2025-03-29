@@ -20,7 +20,6 @@ def client():
     return Client()
 
 
-@pytest.mark.django_db
 def test_profile_index_url():
     path = reverse("profiles_index")
     assert path == "/profiles/"
