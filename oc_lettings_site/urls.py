@@ -13,9 +13,11 @@ Routes:
 
 from django.contrib import admin
 from django.urls import path, include
-
-
 from . import views
+
+
+handler404 = "oc_lettings_site.views.error_404_view"
+handler500 = "oc_lettings_site.views.error_500_view"
 
 urlpatterns = [
     path("", views.index, name="index"),
