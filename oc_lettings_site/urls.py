@@ -16,10 +16,16 @@ from django.urls import path, include
 from . import views
 
 
+def trigger_error(request):
+    """Trigger an error for testing purposes."""
+    return 1 / 0
+
+
 handler404 = "oc_lettings_site.views.error_404_view"
 handler500 = "oc_lettings_site.views.error_500_view"
 
 urlpatterns = [
+    path("sentry-debug/", trigger_error),
     path("", views.index, name="index"),
     path("lettings/", include("lettings.urls")),
     path("profiles/", include("profiles.urls")),
