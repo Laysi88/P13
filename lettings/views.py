@@ -4,6 +4,9 @@ Views for the lettings application.
 
 from django.shortcuts import render, get_object_or_404
 from .models import Letting
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 # Create your views here.
@@ -20,6 +23,7 @@ def index(request):
     Returns:
         HttpResponse: The rendered HTML page with all lettings.
     """
+    logger.info("Rendering lettings index page")
     lettings_list = Letting.objects.all()
     context = {"lettings_list": lettings_list}
     return render(request, "lettings/index.html", context)
@@ -45,6 +49,7 @@ def letting(request, letting_id):
     Returns:
         HttpResponse: The rendered HTML page with letting details.
     """
+    logger.info("Rendering letting page for letting ID: %s", letting_id)
     letting = get_object_or_404(Letting, id=letting_id)
     context = {
         "title": letting.title,

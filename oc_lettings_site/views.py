@@ -13,11 +13,34 @@ logger = logging.getLogger(__name__)
 # orci placerat luctus. Nullam elementum urna nisi, pellentesque iaculis enim
 # cursus in. Praesent volutpat porttitor magna, non finibus neque cursus id.
 def index(request):
+    """
+    Render the homepage.
+
+    Logs the rendering of the index page.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: The rendered index.html page.
+    """
     logger.info("Rendering index.html")
     return render(request, "index.html")
 
 
 def error_404_view(request, exception):
+    """
+    Handle 404 errors (Page Not Found).
+
+    Logs the 404 error and sends the message to Sentry.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        exception (Exception): The exception that triggered the 404.
+
+    Returns:
+        HttpResponse: The rendered 404.html page with a 404 status code.
+    """
     message = f"404 error: Page not found | Path: {request.path}"
     logger.error(message)
     sentry_sdk.capture_message(message, level="error")
@@ -25,5 +48,5 @@ def error_404_view(request, exception):
 
 
 def error_500_view(request):
-    logger.error("500 error: Internal server error | Path: %s", request.path)
+    logger.error("500 error handled by custom view | Path: %s", request.path)
     return render(request, "500.html", status=500)
