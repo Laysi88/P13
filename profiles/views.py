@@ -4,6 +4,9 @@ Views for the profiles application.
 
 from django.shortcuts import render, get_object_or_404
 from .models import Profile
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 # Create your views here.
@@ -20,6 +23,7 @@ def index(request):
     Returns:
         HttpResponse: The HTML response containing all profiles.
     """
+    logger.info("Rendering profiles index page")
     profiles_list = Profile.objects.all()
     context = {"profiles_list": profiles_list}
     return render(request, "profiles/index.html", context)
@@ -40,6 +44,7 @@ def profile(request, username):
     Returns:
         HttpResponse: The HTML response with profile details.
     """
+    logger.info("Rendering profile page for user: %s", username)
     profile = get_object_or_404(Profile, user__username=username)
     context = {"profile": profile}
     return render(request, "profiles/profile.html", context)
