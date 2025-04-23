@@ -16,10 +16,10 @@ django.setup()
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "P13 OC Lettings"
+project = "OC LETTINGS"
 copyright = "2025, Arnaud LIENARD"
 author = "Arnaud LIENARD"
-release = "1.0"
+release = "1"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
