@@ -3,3 +3,5 @@ sphinx-rtd-theme
 sphinx-autobuild
 sphinxcontrib-mermaid
 django
+python-dotenv
+sentry-sdk
