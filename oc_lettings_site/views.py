@@ -48,5 +48,16 @@ def error_404_view(request, exception):
 
 
 def error_500_view(request):
+    """
+    Handle 500 errors (Internal Server Error).
+
+    Logs the 500 error and renders the custom 500 error page.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: The rendered 500.html page with a 500 status code.
+    """
     logger.error("500 error handled by custom view | Path: %s", request.path)
     return render(request, "500.html", status=500)
