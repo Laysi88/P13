@@ -1,3 +1,5 @@
 sphinx
 sphinx-rtd-theme
 sphinx-autobuild
+sphinxcontrib-mermaid
+django
