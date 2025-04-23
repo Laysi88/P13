@@ -2,7 +2,7 @@
 
 ![Documentation Status](https://readthedocs.org/projects/p13-oc/badge/?version=latest)
 ![CI](https://github.com/Laysi88/P13/actions/workflows/ci.yml/badge.svg)
-[![Docker Pulls](https://img.shields.io/docker/pulls/laysi88/p13.svg)](https://hub.docker.com/r/laysi88/p13)
+[![Docker Pulls](https://img.shields.io/docker/pulls/laysi88/p13.svg)](https://hub.docker.com/r/laysi88/p13-app)
 
 
 
