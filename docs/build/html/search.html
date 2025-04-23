@@ -17,6 +17,14 @@
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/translations.js?v=e6b791cb"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+      <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+      <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+      <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
     <script src="_static/js/theme.js"></script>
     <script src="_static/searchtools.js"></script>
     <script src="_static/language_data.js"></script>
@@ -48,6 +56,10 @@
 <li class="toctree-l1"><a class="reference internal" href="description.html">Description du projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Instructions d’installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technologies.html">Technologies et langages de programmation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Base de données et models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Interfaces de programmation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilisation.html">Guide d’utilisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployement.html">Procédure de Déploiement et de Gestion de l’Application</a></li>
 </ul>
 
         </div>

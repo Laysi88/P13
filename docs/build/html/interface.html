@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" data-content_root="./">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; Documentation OC LETTINGS 1</title>
+  <title>Interfaces de programmation &mdash; Documentation OC LETTINGS 1</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -16,17 +17,10 @@
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/translations.js?v=e6b791cb"></script>
-      <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
-      <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
-      <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
-      <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-      <script type="module">
-import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
-window.addEventListener("load", () => mermaid.run());
-</script>
     <script src="_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Recherche" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="Base de données et models" href="models.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,14 +43,16 @@ window.addEventListener("load", () => mermaid.run());
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="description.html">Description du projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Instructions d’installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technologies.html">Technologies et langages de programmation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="models.html">Base de données et models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interface.html">Interfaces de programmation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utilisation.html">Guide d’utilisation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deployement.html">Procédure de Déploiement et de Gestion de l’Application</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Interfaces de programmation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vues-principales">Vues principales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gestion-des-erreurs">Gestion des erreurs</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -73,8 +69,9 @@ window.addEventListener("load", () => mermaid.run());
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Index</li>
+      <li class="breadcrumb-item active">Interfaces de programmation</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="_sources/interface.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
   </ul>
   <hr/>
@@ -82,17 +79,52 @@ window.addEventListener("load", () => mermaid.run());
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
-</div>
+  <section id="interfaces-de-programmation">
+<h1>Interfaces de programmation<a class="headerlink" href="#interfaces-de-programmation" title="Lien vers cette rubrique"></a></h1>
+<section id="vues-principales">
+<h2>Vues principales<a class="headerlink" href="#vues-principales" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><strong>Page d’accueil</strong>
+- URL : <cite>/</cite>
+- Vue : <cite>oc_lettings_site.views.index</cite>
+- Description : Affiche la page d’accueil de l’application.</p></li>
+<li><p><strong>Liste des locations</strong>
+- URL : <cite>/lettings/</cite>
+- Vue : <cite>lettings.views.index</cite>
+- Description : Affiche la liste de toutes les locations.</p></li>
+<li><p><strong>Détail d’une location</strong>
+- URL : <cite>/lettings/&lt;int:letting_id&gt;/</cite>
+- Vue : <cite>lettings.views.letting</cite>
+- Description : Affiche les détails d’une location spécifique.</p></li>
+<li><p><strong>Liste des profils utilisateurs</strong>
+- URL : <cite>/profiles/</cite>
+- Vue : <cite>profiles.views.index</cite>
+- Description : Affiche la liste des profils utilisateurs.</p></li>
+<li><p><strong>Détail d’un profil utilisateur</strong>
+- URL : <cite>/profiles/&lt;str:username&gt;/</cite>
+- Vue : <cite>profiles.views.profile</cite>
+- Description : Affiche les détails d’un utilisateur donné.</p></li>
+</ul>
+</section>
+<section id="gestion-des-erreurs">
+<h2>Gestion des erreurs<a class="headerlink" href="#gestion-des-erreurs" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><strong>Erreur 404 – Page introuvable</strong>
+- Vue : <cite>oc_lettings_site.views.error_404_view</cite>
+- Description : Vue personnalisée pour afficher une page 404.</p></li>
+<li><p><strong>Erreur 500 – Erreur serveur</strong>
+- Vue : <cite>oc_lettings_site.views.error_500_view</cite>
+- Description : Vue personnalisée pour afficher une page 500.</p></li>
+</ul>
+</section>
+</section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="models.html" class="btn btn-neutral float-left" title="Base de données et models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+    </div>
 
   <hr/>
 

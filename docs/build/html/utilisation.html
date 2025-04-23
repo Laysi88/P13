@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Description du projet &mdash; Documentation OC LETTINGS 1</title>
+  <title>Guide d’utilisation &mdash; Documentation OC LETTINGS 1</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -20,8 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Instructions d’installation" href="installation.html" />
-    <link rel="prev" title="Bienvenue dans la documentation de P13 OC Lettings !" href="index.html" /> 
+    <link rel="prev" title="Interfaces de programmation" href="interface.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,15 +44,15 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Description du projet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#fonctionnalites-principales">Fonctionnalités principales</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#architecture-generale">Architecture générale</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="description.html">Description du projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Instructions d’installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technologies.html">Technologies et langages de programmation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="models.html">Base de données et models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Interfaces de programmation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Guide d’utilisation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#utilisation-du-site">Utilisation du site</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -70,9 +69,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Description du projet</li>
+      <li class="breadcrumb-item active">Guide d’utilisation</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/description.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+            <a href="_sources/utilisation.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
   </ul>
   <hr/>
@@ -80,30 +79,46 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="description-du-projet">
-<h1>Description du projet<a class="headerlink" href="#description-du-projet" title="Lien vers cette rubrique"></a></h1>
-<p><strong>P13 OC Lettings</strong> est une application web développée dans le cadre du projet 13 du parcours Développeur d’Applications Python chez OpenClassrooms.</p>
-<section id="fonctionnalites-principales">
-<h2>Fonctionnalités principales<a class="headerlink" href="#fonctionnalites-principales" title="Lien vers cette rubrique"></a></h2>
-<ul class="simple">
-<li><p>Visualisation d’une liste de locations</p></li>
-<li><p>Consultation du détail d’une location</p></li>
-<li><p>Visualisation d’une liste de profiles</p></li>
-<li><p>Consultation du détail d’un profile</p></li>
-<li><p>Administration de la base de données via l’interface Django Admin</p></li>
-<li><p>Journalisation des erreurs et surveillance via Sentry</p></li>
-<li><p>Déploiement sur un environnement cloud (Render)</p></li>
+  <section id="guide-dutilisation">
+<h1>Guide d’utilisation<a class="headerlink" href="#guide-dutilisation" title="Lien vers cette rubrique"></a></h1>
+<p>Ce guide présente comment utiliser les fonctionnalités principales de l’application <strong>P13 OC Lettings</strong> en tant qu’utilisateur ou administrateur.</p>
+<section id="utilisation-du-site">
+<h2>Utilisation du site<a class="headerlink" href="#utilisation-du-site" title="Lien vers cette rubrique"></a></h2>
+<p>En tant que visiteur :</p>
+<ul>
+<li><p>Accéder à la page d’accueil via : <cite>http://localhost:8000</cite></p>
+<a class="reference internal image-reference" href="_images/index.png"><img alt="index screenshot" class="align-center" src="_images/index.png" style="width: 600px;" />
+</a>
+</li>
+<li><p>Cliquer sur <strong>« Lettings »</strong> pour afficher la liste des locations.</p>
+<a class="reference internal image-reference" href="_images/lettings.png"><img alt="lettings screenshot" class="align-center" src="_images/lettings.png" style="width: 600px;" />
+</a>
+</li>
+<li><p>Cliquer sur une <strong>location</strong> pour consulter ses détails (titre, adresse…).</p>
+<a class="reference internal image-reference" href="_images/letting.png"><img alt="letting screenshot" class="align-center" src="_images/letting.png" style="width: 600px;" />
+</a>
+</li>
+<li><p>Cliquer sur <strong>« Profiles »</strong> pour afficher la liste des profils utilisateurs.</p>
+<a class="reference internal image-reference" href="_images/profiles.png"><img alt="profiles screenshot" class="align-center" src="_images/profiles.png" style="width: 600px;" />
+</a>
+</li>
+<li><p>Consulter les <strong>informations</strong> d’un utilisateur, comme sa ville préférée.</p>
+<a class="reference internal image-reference" href="_images/profile.png"><img alt="profile screenshot" class="align-center" src="_images/profile.png" style="width: 600px;" />
+</a>
+</li>
 </ul>
-</section>
-<section id="architecture-generale">
-<h2>Architecture générale<a class="headerlink" href="#architecture-generale" title="Lien vers cette rubrique"></a></h2>
-<p>Le projet est composé de trois modules principaux :</p>
-<ul class="simple">
-<li><p><cite>oc_lettings_site</cite> : point d’entrée de l’application (configuration Django, routes principales, gestion des erreurs)</p></li>
-<li><p><cite>lettings</cite> : module dédié aux annonces immobilières</p></li>
-<li><p><cite>profiles</cite> : module dédié aux utilisateurs et à leur ville de résidence préférée</p></li>
+<p>En tant qu’administrateur :</p>
+<ul>
+<li><p>Se connecter à l’interface admin : <cite>http://localhost:8000/admin/</cite></p></li>
+<li><p>Se connecter avec les identifiants administrateur : <cite>admin</cite> / <cite>Abc1234!</cite></p>
+<a class="reference internal image-reference" href="_images/admin.png"><img alt="admin screenshot" class="align-center" src="_images/admin.png" style="width: 600px;" />
+</a>
+</li>
+<li><p>Gérer les modèles <strong>Letting</strong>, <strong>Address</strong>, <strong>Profile</strong> et <strong>User</strong></p>
+<a class="reference internal image-reference" href="_images/admin_models.png"><img alt="admin models screenshot" class="align-center" src="_images/admin_models.png" style="width: 600px;" />
+</a>
+</li>
 </ul>
-<p>Ce découpage modulaire permet de faciliter la maintenance et l’évolutivité du projet.</p>
 </section>
 </section>
 
@@ -111,8 +126,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="index.html" class="btn btn-neutral float-left" title="Bienvenue dans la documentation de P13 OC Lettings !" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="installation.html" class="btn btn-neutral float-right" title="Instructions d’installation" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="interface.html" class="btn btn-neutral float-left" title="Interfaces de programmation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
     </div>
 
   <hr/>

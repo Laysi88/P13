@@ -1,10 +1,9 @@
 import os
 import sys
+import django
 
 sys.path.insert(0, os.path.abspath("../.."))
 os.environ["DJANGO_SETTINGS_MODULE"] = "oc_lettings_site.settings"
-
-import django
 
 django.setup()
 
@@ -29,6 +28,7 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
     "sphinx_rtd_theme",
+    "sphinxcontrib.mermaid",
 ]
 
 templates_path = ["_templates"]

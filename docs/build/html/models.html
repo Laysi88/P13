@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" data-content_root="./">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; Documentation OC LETTINGS 1</title>
+  <title>Base de données et models &mdash; Documentation OC LETTINGS 1</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -25,8 +26,10 @@ import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.es
 window.addEventListener("load", () => mermaid.run());
 </script>
     <script src="_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Recherche" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Interfaces de programmation" href="interface.html" />
+    <link rel="prev" title="Technologies et langages de programmation" href="technologies.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,14 +52,16 @@ window.addEventListener("load", () => mermaid.run());
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="description.html">Description du projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Instructions d’installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technologies.html">Technologies et langages de programmation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="models.html">Base de données et models</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Base de données et models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-de-donnees">Base de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#models">Models</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Interfaces de programmation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utilisation.html">Guide d’utilisation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deployement.html">Procédure de Déploiement et de Gestion de l’Application</a></li>
 </ul>
 
         </div>
@@ -73,8 +78,9 @@ window.addEventListener("load", () => mermaid.run());
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Index</li>
+      <li class="breadcrumb-item active">Base de données et models</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="_sources/models.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
   </ul>
   <hr/>
@@ -82,17 +88,52 @@ window.addEventListener("load", () => mermaid.run());
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
+  <section id="base-de-donnees-et-models">
+<h1>Base de données et models<a class="headerlink" href="#base-de-donnees-et-models" title="Lien vers cette rubrique"></a></h1>
+<section id="base-de-donnees">
+<h2>Base de données<a class="headerlink" href="#base-de-donnees" title="Lien vers cette rubrique"></a></h2>
+<p>L’application utilise une base de données relationnelle pour stocker les informations sur les utilisateurs, les annonces et les adresses. Le modèle de données est conçu pour être extensible et facile à maintenir.
+La base de données est de type SQlite.
+La base de données est gérée par Django ORM, ce qui permet d’interagir avec la base de données à l’aide d’objets Python plutôt que de requêtes SQL brutes.</p>
+</section>
+<section id="models">
+<h2>Models<a class="headerlink" href="#models" title="Lien vers cette rubrique"></a></h2>
+<p>Ce diagramme présente la structure des données de l’application.</p>
+<pre  class="mermaid">
+        classDiagram
+  class User
 
-<h1 id="index">Index</h1>
+  class Profile {
+    +user: User (OneToOne)
+    +favorite_city: str
+  }
 
-<div class="genindex-jumpbox">
- 
-</div>
+  class Address {
+    +number: int
+    +street: str
+    +city: str
+    +state: str
+    +zip_code: str
+    +country_iso_code: str
+  }
+
+  class Letting {
+    +title: str
+    +address: Address (OneToOne)
+  }
+
+  Profile --&gt; User
+  Letting --&gt; Address
+    </pre></section>
+</section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="technologies.html" class="btn btn-neutral float-left" title="Technologies et langages de programmation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="interface.html" class="btn btn-neutral float-right" title="Interfaces de programmation" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

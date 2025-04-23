@@ -13,4 +13,8 @@ Bienvenue dans la documentation de P13 OC Lettings !
    description
    installation
    technologies
+   models
+   interface
+   utilisation
+   deployement
 
