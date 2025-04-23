@@ -8,12 +8,10 @@ build:
 
 python:
   install:
-    - method: pip
-      path: .
-    - requirements: docs/requirements.txt  
+    - requirements: docs/requirements.txt
 
 sphinx:
-  configuration: docs/source/conf.py 
+  configuration: docs/source/conf.py
 
 formats:
   - pdf
